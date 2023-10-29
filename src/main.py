@@ -1,8 +1,6 @@
 from fastapi import FastAPI
 
-app = FastAPI(debug=True)
+from src.routes.routes import router
 
-
-@app.get("/")
-async def root():
-    return {"message": "Hello world"}
+app = FastAPI(debug=True)  # TODO: remove debug after release
+app.include_router(router=router)
