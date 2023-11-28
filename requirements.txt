@@ -23,3 +23,4 @@ flake8-bandit==4.1.1
 flake8-debugger==4.1.2
 flake8-rst-docstrings==0.3.0
 black==22.6.0
+prometheus_fastapi_instrumentator
