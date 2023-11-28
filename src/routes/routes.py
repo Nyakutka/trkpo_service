@@ -6,6 +6,6 @@ from src.utils.utils import mock_response
 router = APIRouter(prefix="/trkpo")
 
 
-@router.post("/get-best-places")
+@router.post("/request")
 async def get_best_places(main_request: MainRequest) -> MainResponse:
     return mock_response
