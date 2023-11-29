@@ -2,8 +2,22 @@ version: '3.8'
 
 services:
     service:
-        build: /home/stepan/PycharmProjects/trkpo_service
+        build: C:\Users\stepan\PycharmProjects\service
         ports:
           - 8000:8001
     bot:
-        build: /home/stepan/PycharmProjects/trkpo_bot
+        build: C:\Users\stepan\PycharmProjects\bot
+
+    prometheus: 
+        image: prom/prometheus
+        ports:
+          - 9090:9090
+        volumes:
+          - ./config/prometheus.ymal:/etc/prometheus/prometheus.yaml
+    grafana:
+        image: grafana/grafana
+        ports: 
+          - 3000:3000
+        environment:
+            - GF_SECURITY_ADMIN_USER=admin
+            - GF_SECURITY_ADMIN_PASSWORD=admin
